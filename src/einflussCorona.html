@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Leo Oetterli"/>
+    <meta name="project" content="PRWR"/>
+    <meta name="description" content="richest man"/>
+    <link rel="icon" href="public/img/favicon.ico" type="image/png">
+    <title>Einfluss von der Corona Pandemie</title>
+
+    <!-- Bootstrap + Chart.js -->
+
+    <link rel="stylesheet" href="public/css/bootstrap.css">
+    <link rel="stylesheet" href="public/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="public/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="public/css/bootstrap-utilities.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+    <!-- Main CSS -->
+
+    <link rel="stylesheet" href="public/css/style.css">
+
+</head>
+<body>
+
+<!-- Nav Bar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="public/img/navicon.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="topTen.html">Top Ten</a>
+                <a class="nav-link active" aria-current="page" href="#">Einfluss der Pandemie</a>
+                <a class="nav-link" href="fazit.html">Fazit</a>
+                <a class="nav-link" href="quellen.html">Quellen</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Area -->
+
+<div class="main">
+    <h1 class="title">Die reichsten Menschen der letzten Jahre</h1>
+    <div class="container paddingtitle align-content-center">
+        <canvas id="chart" width="800" height="400"></canvas>
+        <script>
+
+            const ctx = document.getElementById('chart').getContext('2d');
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['2017', '2018', '2019', 'April 2020', 'Heute'],
+                    datasets: [{
+                        label: 'Jeff Bezos',
+                        data: [72.8, 112, 131, 113, 181.9],
+                        fill: false,
+                        borderColor: 'rgba(255, 51, 51, 1)',
+                    }, {
+                        label: 'Bill Gates',
+                        data: [86, 90, 96, 98, 118.6],
+                        fill: false,
+                        borderColor: 'rgb(0,0,255)',
+                    }, {
+                        label: 'Bernard Arnault',
+                        data: [41.8, 72, 76, 76, 145.6],
+                        fill: false,
+                        borderColor: 'rgba(255, 153, 51, 1)',
+                    }, {
+                        label: 'Warren Buffett',
+                        data: [75.6, 84, 82.5, 67.5, 85.8],
+                        fill: false,
+                        borderColor: 'rgba(0, 204, 0, 1)',
+                    }, {
+                        label: 'Larry Ellison',
+                        data: [52.2, 58, 62.5, 59, 81.1],
+                        fill: false,
+                        borderColor: 'rgba(0, 102, 204, 1)',
+                    }, {
+                        label: 'Mark Zuckerberg',
+                        data: [56, 71, 62.3, 54.7, 101.8],
+                        fill: false,
+                        borderColor: 'rgb(229, 73, 178)',
+                    }, {
+                        label: 'Larry Page',
+                        data: [40.7, 48, 50.8, 50.9, 78.5],
+                        fill: false,
+                        borderColor: 'rgb(0,0,0)',
+                    }, {
+                        label: 'Sergey Brin',
+                        data: [39.8, 47, 49.8, 49.1, 76.3],
+                        fill: false,
+                        borderColor: 'rgb(79, 2, 122)',
+                    }, {
+                        label: 'Mukesh Ambani',
+                        data: [20.6, 40.1, 50, 36.8, 77.8],
+                        fill: false,
+                        borderColor: 'rgb(21, 72, 22)',
+                    }, {
+                        label: 'Elon Musk',
+                        data: [20.7, 22.3, 24.6, 100.3, 134.3],
+                        fill: false,
+                        borderColor: 'rgb(83,83,83)',
+                    }, {
+                        label: 'Ortega',
+                        data: [71.3, 70, 62.7, 55.1, 76],
+                        fill: false,
+                        borderColor: 'rgb(86,6,6)',
+                    }, {
+                        label: 'J Walton',
+                        data: [34, 46, 44.6, 54.6, 68.8],
+                        fill: false,
+                        borderColor: 'rgb(29,84,84)'
+                    }
+                    ]
+                },
+                options: {
+                    legend: {
+                        labels: {
+                            fontColor: "#000",
+                            fontSize: 14,
+                        }
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                fontSize: 16,
+                                labelString: 'Jahre',
+                                fontColor: "#000",
+                            },
+                            gridLines: {
+                                color: "#000",
+                            },
+                            ticks: {
+                                fontColor: "#000",
+                                fontSize: 14,
+                            },
+                        }],
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                fontSize: 16,
+                                labelString: 'Vermögen in Mia. $',
+                                fontColor: "#000",
+                            },
+                            gridLines: {
+                                color: "#000",
+                            },
+                            ticks: {
+                                fontColor: "#000",
+                                fontSize: 14,
+                            },
+                        }]
+                    }
+                }
+            });
+        </script>
+        <div class="container-fluid container-sm">
+
+            <p>
+                Im obigen Diagramm ist die Entwicklung des Vermögens
+                der reichsten Menschen in Milliarden im Vergleich zu
+                den letzten Jahren ersichtlich. Jeder Person ist eine
+                separate Farbe zugewiesen, um sie leicht unterscheiden
+                zu können. Über dem Diagramm kann man einzelne Personen
+                abwählen, damit diese nicht mehr im Diagramm ersichtlich
+                sind, was die Analyse erleichtert.
+            </p>
+            <p>
+                Was auf am Graphen klar abzulesen ist, die Aktienmärkte sind zum beginn der Pandemie im März
+                ohne Stop so Tief gesunken wie schon langen nicht mehr. Dennoch
+                Sieht man, dass sich dies wieder erholt hat, und vor allem
+                bei denen welchen IT Unternehmen gehören, das Vermögen wieder
+                immens gestiegen ist.
+            </p>
+            Auf der nächsten Seite wird auf dies nochmals genauer eingegangen.
+        </div>
+        <div class="next">
+            <button type="button" class="btn btn-dark">
+                <a type="button" href="fazit.html" class="link">
+                    <h5>Fazit</h5>
+                </a>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+
+<footer class="footer">
+    <h5>Quellen:</h5>
+    <a href="quellen.html">Forbes Magazine</a>
+    <a href="quellen.html">Die Presse</a>
+    <a href="quellen.html">Wikipedia</a>
+</footer>
+
+<!-- JavaScript -->
+
+<script src="public/js/bootstrap.bundle.js"></script>
+<script src="public/js/bootstrap.esm.js"></script>
+<script src="public/js/bootstrap.js"></script>
+
+
+</body>
+</html>

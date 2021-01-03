@@ -1,0 +1,61 @@
+/* background/important/img
+============================================================================================ */
+body {
+    background-color: #ffffff;
+}
+
+/* Main Area
+============================================================================================ */
+
+.main {
+    padding-top: 100px;
+    padding-bottom: 120px;
+    text-align: center;
+    /*background-image: url('../img/background.png');*/
+    background-color: #fef074;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.title {
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.next {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.paddingtitle {
+    padding-top: 100px;
+    padding-bottom: 120px;
+    text-align: center;
+}
+
+.placeholder {
+    padding: 71px;
+}
+
+.placeholderindex{
+    padding: 77px;
+}
+
+
+/* Footer Area
+============================================================================================ */
+
+.footer {
+    background: #212529;
+    color: #ffffff;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+}
